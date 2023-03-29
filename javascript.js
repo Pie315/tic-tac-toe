@@ -8,7 +8,7 @@ console.log("ran");
 
 // gameboard (Module)
 // stores position of pieces
-let boardModule = (function () {
+const boardModule = (function() {
     const hello = "hello world";
     let times = 0;
 

@@ -18,7 +18,6 @@ const boardModule = (function() {
         for (let i = 0; i < grid.length; i += 1) {
             content[i].textContent = grid[i];
         }
-
     };
 
     const counter = () => {

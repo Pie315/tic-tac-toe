@@ -9,14 +9,17 @@ console.log("ran");
 // gameboard (Module)
 // stores position of pieces
 const boardModule = (function() {
-    const squares = document.querySelectorAll(".square");
     const hello = "hello world";
     let times = 0;
-    let grid = [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null]
-    ];
+    let grid = [null, null, null, null, null, null, null, null, null];
+
+    const updateGrid = () => {
+        const content = document.querySelectorAll(".content");
+        for (let i = 0; i < grid.length; i += 1) {
+            content[i].textContent = grid[i];
+        }
+
+    };
 
     const counter = () => {
         console.log("This has been run", times, "times."); // this is printed to the console
@@ -27,5 +30,6 @@ const boardModule = (function() {
     return {
         hello,
         counter,
+        updateGrid
     };
 })();

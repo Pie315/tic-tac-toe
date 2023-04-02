@@ -1,3 +1,8 @@
+:root {
+    --text: whitesmoke; 
+    --dark-background: black;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 20vh);
@@ -7,8 +12,8 @@
 }
 
 .square {
-    background-color: blanchedalmond;
-    border: 2px solid black;
+    background-color: rgb(75, 58, 85);
+    border: 2px solid rgb(118, 91, 135);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -23,8 +28,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--dark-background);
 }
 
 h1 {
     text-align: center;
+}
+
+.page {
+    background-color: var(--dark-background);
+    color: var(--text);
 }

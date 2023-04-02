@@ -1,11 +1,8 @@
-console.log("ran");
-
-
 // runs when a square is clicked
 function squareClick() {
-    console.log(this.id)
+    // use "this" to reference the event
+    
 };
-
 
 
 const squares = document.querySelectorAll(".square");
@@ -17,6 +14,9 @@ squares.forEach(square => {
 
 // game (Module?)
 // runs game determines a win/loss
+const game = (function() {
+    
+})();
 
 // player (factory)
 // Stoes wins/losses?
@@ -37,7 +37,7 @@ const boardModule = (function() {
 
     // postions start at 0-8
     const changeGrid = (position, value) => {
-        grid[position].textContent = value;
+        grid[position] = value;
     }
 
     // sample

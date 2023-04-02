@@ -1,3 +1,9 @@
+// checks if game is won and returns winner
+function checkGameState() {
+
+};
+
+
 // runs when a square is clicked
 function squareClick() {
     // use "this" to reference the event
@@ -15,7 +21,7 @@ squares.forEach(square => {
 // game (Module?)
 // runs game determines a win/loss
 const game = (function() {
-    
+
 })();
 
 // player (factory)
@@ -24,8 +30,7 @@ const game = (function() {
 // gameboard (Module)
 // stores position of pieces
 const boardModule = (function() {
-    let times = 0;
-    const grid = [null, null, null, null, null, null, null, null, null];
+    let grid = [null, null, null, null, null, null, null, null, null];
 
     // private (should start with "_")
     const updateGrid = () => {
@@ -38,18 +43,22 @@ const boardModule = (function() {
     // postions start at 0-8
     const changeGrid = (position, value) => {
         grid[position] = value;
+        updateGrid();
     }
 
-    // sample
-    const counter = () => {
-        console.log("This has been run", times, "times."); // this is printed to the console
-        times += 1;
-        return "hello"; // this is returned as a value
-    };
+    const resetGrid = () => {
+        grid = [null, null, null, null, null, null, null, null, null];
+        updateGrid();
+    }
+
+    const number = () => {
+        grid = [0,1,2,3,4,5,6,7,8];
+        updateGrid();
+    }
 
     return {
-        counter,
-        updateGrid,
+        resetGrid,
         changeGrid,
+        number
     };
 })();

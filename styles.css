@@ -18,6 +18,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: perspective(1px) translateY(0px);
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+
+.square:hover {
+    transform: translateY(-8px) rotateZ(90deg);
 }
 
 .content {

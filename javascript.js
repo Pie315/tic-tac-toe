@@ -20,7 +20,7 @@ const game = (function() {
         
     // checks if game is won and returns winner
     const checkGameState = function() {
-
+        
     };
 
     return{
@@ -33,11 +33,11 @@ const game = (function() {
 // Stoes wins/losses?
 function Player(playerNum) {
 
-    let prompt = ("Enter ", playerNum, " player name:");
+    let prompt = ("Enter ").concat(String(playerNum), " player name:");
     const name =  window.prompt(prompt);
     this.name = name
     
-    prompt = ("Enter mark for ", name);
+    prompt = ("Enter mark for " ).concat(String(name));
     this.mark = window.prompt(prompt);
 
     return this;

@@ -31,10 +31,14 @@ const game = (function() {
 
 // player (factory)
 // Stoes wins/losses?
-function player(name, icon) {
-    let wins = 0;
-    this.name = name;
-    this.icon = icon;
+function Player(playerNum) {
+
+    let prompt = ("Enter ", playerNum, " player name:");
+    const name =  window.prompt(prompt);
+    this.name = name
+    
+    prompt = ("Enter mark for ", name);
+    this.mark = window.prompt(prompt);
 
     return this;
 }
@@ -79,3 +83,7 @@ const boardModule = (function() {
 
 // This is where main starts ?
 
+
+
+const playerOne = new Player("first");
+const playerTwo = new Player("second");

@@ -3,7 +3,7 @@
 // runs when a square is clicked
 function squareClick() {
     // use "this" to reference the event
-    console.log(this.id);
+    game.play(this.id);
 };
 
 
@@ -17,6 +17,10 @@ squares.forEach(square => {
 // game (Module?)
 // runs game determines a win/loss
 const game = (function() {
+
+    const play = function() {
+        
+    }
         
     // checks if game is won and returns winner
     const checkGameState = function() {
@@ -25,6 +29,7 @@ const game = (function() {
 
     return{
         checkGameState,
+        play
     }
 
 })();

@@ -31,6 +31,13 @@ const game = (function() {
 
 // player (factory)
 // Stoes wins/losses?
+function player(name, icon) {
+    let wins = 0;
+    this.name = name;
+    this.icon = icon;
+
+    return this;
+}
 
 // gameboard (Module)
 // stores position of pieces
@@ -68,3 +75,7 @@ const boardModule = (function() {
         grid
     };
 })();
+
+
+// This is where main starts ?
+

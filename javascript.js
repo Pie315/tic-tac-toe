@@ -56,10 +56,25 @@ const boardModule = (function() {
 // game (Module?)
 // runs game determines a win/loss
 const game = (function() {
-        
+    let player = 0
+
+    const flipPlayer = function() {
+        console.log("called")
+        if (player === 0){
+            player = 1;
+        } else {
+            player = 0
+        }
+    }
+
     // checks if game is won and returns winner
     const checkGameState = function() {
-        return "1"
+        const board = boardModule.grid;
+        flipPlayer()
+
+        
+
+        return player
     };
 
     return{
@@ -79,12 +94,13 @@ const playerTwo = new Player("second");
 // runs when a square is clicked
 function squareClick() {
     // use "this" to reference the event
-    if (game.checkGameState() === "0") {
+    const turn = game.checkGameState()
+    if (turn === 0) {
         boardModule.changeGrid(this.id, playerOne.mark);
-    } else if (game.checkGameState() === "1") {
+    } else if (turn === 1) {
         boardModule.changeGrid(this.id, playerTwo.mark)
     } else {
-        console.log("error")
+        console.log("game over")
     }
 };
 

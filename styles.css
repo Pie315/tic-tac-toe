@@ -24,7 +24,7 @@
 }
 
 .square:hover {
-    transform: translateY(-8px) rotateZ(90deg);
+    transform: translateY(-8px);
 }
 
 .content {

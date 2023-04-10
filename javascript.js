@@ -1,39 +1,5 @@
 
 
-// runs when a square is clicked
-function squareClick() {
-    // use "this" to reference the event
-    game.play(this.id);
-};
-
-
-const squares = document.querySelectorAll(".square");
-
-squares.forEach(square => {
-    square.addEventListener("click", squareClick);
-});
-
-
-// game (Module?)
-// runs game determines a win/loss
-const game = (function() {
-
-    const play = function() {
-        
-    }
-        
-    // checks if game is won and returns winner
-    const checkGameState = function() {
-        
-    };
-
-    return{
-        checkGameState,
-        play
-    }
-
-})();
-
 // player (factory)
 // Stoes wins/losses?
 function Player(playerNum) {
@@ -86,9 +52,45 @@ const boardModule = (function() {
 })();
 
 
-// This is where main starts ?
 
+// game (Module?)
+// runs game determines a win/loss
+const game = (function() {
+        
+    // checks if game is won and returns winner
+    const checkGameState = function() {
+        return "1"
+    };
+
+    return{
+        checkGameState,
+        
+    }
+
+})();
+
+// This is where main starts ?
 
 
 const playerOne = new Player("first");
 const playerTwo = new Player("second");
+
+
+// runs when a square is clicked
+function squareClick() {
+    // use "this" to reference the event
+    if (game.checkGameState() === "0") {
+        boardModule.changeGrid(this.id, playerOne.mark);
+    } else if (game.checkGameState() === "1") {
+        boardModule.changeGrid(this.id, playerTwo.mark)
+    } else {
+        console.log("error")
+    }
+};
+
+
+const squares = document.querySelectorAll(".square");
+
+squares.forEach(square => {
+    square.addEventListener("click", squareClick);
+});

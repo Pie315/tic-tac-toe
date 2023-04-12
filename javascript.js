@@ -69,6 +69,11 @@ const game = (function() {
         }
     }
 
+    const checkForWin = function() {
+        const board = boardModule.grid;
+        console.log(board)
+    }
+
     // checks if game is won and returns winner
     const checkGameState = function(square) {
         
@@ -76,20 +81,26 @@ const game = (function() {
         const tile = board[Number(square.id)];
         let open = true;
 
-        if ((tile.textContent === playerOne.mark) || ((tile.textContent === playerTwo.mark))) {
+        if ((tile === playerOne.mark) || ((tile === playerTwo.mark))) {
             open = false;
+        } else {
+            open = true;
+            console.log(tile)
         }
 
 
-        if (open)
+        if (open) {
             game.flipPlayer()
             if (player === 0) {
-                boardModule.changeGrid(this.id, playerOne.mark);
+                boardModule.changeGrid(square.id, playerOne.mark);
             } else if (player === 1) {
-                boardModule.changeGrid(this.id, playerTwo.mark)
+                boardModule.changeGrid(square.id, playerTwo.mark)
             } else {
                 console.log("game over")
             }
+        }
+
+        checkForWin()
 
         return player
     };

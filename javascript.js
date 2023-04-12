@@ -52,11 +52,13 @@ const boardModule = (function() {
 })();
 
 
+const playerOne = new Player("first");
+const playerTwo = new Player("second");
 
 // game (Module?)
 // runs game determines a win/loss
 const game = (function() {
-    let player = 0
+    let player = 1
 
     const flipPlayer = function() {
         console.log("called")
@@ -68,11 +70,26 @@ const game = (function() {
     }
 
     // checks if game is won and returns winner
-    const checkGameState = function() {
-        const board = boardModule.grid;
-        flipPlayer()
-
+    const checkGameState = function(square) {
         
+        const board = boardModule.grid;
+        const tile = board[Number(square.id)];
+        let open = true;
+
+        if ((tile.textContent === playerOne.mark) || ((tile.textContent === playerTwo.mark))) {
+            open = false;
+        }
+
+
+        if (open)
+            game.flipPlayer()
+            if (player === 0) {
+                boardModule.changeGrid(this.id, playerOne.mark);
+            } else if (player === 1) {
+                boardModule.changeGrid(this.id, playerTwo.mark)
+            } else {
+                console.log("game over")
+            }
 
         return player
     };
@@ -88,21 +105,13 @@ const game = (function() {
 // This is where main starts ?
 
 
-const playerOne = new Player("first");
-const playerTwo = new Player("second");
 
 
 // runs when a square is clicked
 function squareClick() {
     // use "this" to reference the event
-    const turn = game.checkGameState()
-    if (turn === 0) {
-        boardModule.changeGrid(this.id, playerOne.mark);
-    } else if (turn === 1) {
-        boardModule.changeGrid(this.id, playerTwo.mark)
-    } else {
-        console.log("game over")
-    }
+    game.checkGameState(this)
+
 };
 
 

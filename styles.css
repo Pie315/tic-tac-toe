@@ -21,10 +21,12 @@
     transform: perspective(1px) translateY(0px);
     transition-duration: 200ms;
     transition-timing-function: ease-out;
+    user-select: none;
 }
 
 .square:hover {
     transform: translateY(-8px);
+    cursor: pointer;
 }
 
 .content {

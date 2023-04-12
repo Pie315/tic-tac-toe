@@ -79,6 +79,7 @@ const game = (function() {
 
     return{
         checkGameState,
+        flipPlayer
         
     }
 

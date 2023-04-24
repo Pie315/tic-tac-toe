@@ -52,8 +52,8 @@ const boardModule = (function() {
 })();
 
 
-const playerOne = new Player("first");
-const playerTwo = new Player("second");
+//const playerOne = new Player("first");
+//const playerTwo = new Player("second");
 
 // game (Module?)
 // runs game determines a win/loss
@@ -107,7 +107,7 @@ const game = (function() {
 
     return{
         checkGameState,
-        flipPlayer
+        flipPlayer,
         
     }
 

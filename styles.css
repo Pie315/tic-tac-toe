@@ -3,6 +3,13 @@
     --dark-background: black;
 }
 
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 20vh);
@@ -47,4 +54,11 @@ h1 {
 .page {
     background-color: var(--dark-background);
     color: var(--text);
+}
+
+.select {
+    width: 200px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

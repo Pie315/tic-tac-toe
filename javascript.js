@@ -2,7 +2,7 @@
 
 // player (factory)
 // Stoes wins/losses?
-function Player(playerNum) {
+function Player() {
 
     let prompt = ("Enter ").concat(String(playerNum), " player name:");
     const name =  window.prompt(prompt);
@@ -51,9 +51,6 @@ const boardModule = (function() {
     };
 })();
 
-
-//const playerOne = new Player("first");
-//const playerTwo = new Player("second");
 
 // game (Module?)
 // runs game determines a win/loss
